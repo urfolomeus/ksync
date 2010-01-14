@@ -1,0 +1,9 @@
+#!/usr/local/bin ruby
+$LOAD_PATH.push File.join(File.dirname(__FILE__), "..", "lib")
+require 'kitchen_sync'
+
+ksync = KitchenSync::KSync.new(STDOUT)
+ksync.start
+while command = gets
+  ksync.command command.split
+end
