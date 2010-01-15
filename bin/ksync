@@ -1,6 +1,6 @@
 #!/usr/local/bin ruby
 $LOAD_PATH.push File.join(File.dirname(__FILE__), "..", "lib")
-require 'kitchen_sync'
+require 'ksync'
 
 ksync = KitchenSync::KSync.new(STDOUT)
 ksync.start
