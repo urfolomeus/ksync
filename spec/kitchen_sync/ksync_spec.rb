@@ -1,6 +1,6 @@
 require File.join(File.dirname(__FILE__), "..", "spec_helper")
 
-module SyncrHelper
+module KitchenSyncHelper
   def command_list
     commands = "\n"
     commands += "Command List\n"
@@ -15,7 +15,7 @@ end
 
 module KitchenSync
   describe KSync do
-    include SyncrHelper
+    include KitchenSyncHelper
     
     before(:each) do
       @messenger = mock("messenger").as_null_object
