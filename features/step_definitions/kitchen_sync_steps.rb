@@ -14,11 +14,11 @@ Given /^kitchen\-sync is not yet started$/ do
 end
 
 Given /^kitchen\-sync is started$/ do
-  ksync.start
+  ksync.start(src, dest)
 end
 
-When /^I start kitchen sync$/ do
-  ksync.start
+When /^I start kitchen sync with valid directories$/ do
+  ksync.start(src, dest)
 end
 
 When /^I enter command (.*)$/ do |command|

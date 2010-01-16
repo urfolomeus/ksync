@@ -3,8 +3,10 @@ $LOAD_PATH.push File.join(File.dirname(__FILE__), "..", "lib")
 require 'ksync'
 
 ksync = KitchenSync::KSync.new(STDOUT)
-ksync.start
+src = ARGV[0]
+dest = ARGV[1]
+ksync.start(src, dest)
 while command = gets
   ksync.command command.split
-  Process.exit!(0) if command.split[0] == "exit"
+  Process.exit if command.split[0] == "exit"
 end
