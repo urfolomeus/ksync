@@ -28,3 +28,6 @@ end
 Then /^I should see "([^\"]*)"$/ do |message|
   messages_should_include(message)
 end
+
+Then /^the application should terminate$/ do
+end

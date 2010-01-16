@@ -6,4 +6,5 @@ ksync = KitchenSync::KSync.new(STDOUT)
 ksync.start
 while command = gets
   ksync.command command.split
+  Process.exit!(0) if command.split[0] == "exit"
 end

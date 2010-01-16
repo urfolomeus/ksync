@@ -8,8 +8,8 @@ module KitchenSyncHelper
     commands += "help   show command list\n"
     commands += "diff   show diff between given directories\n"
     commands += "sync   synchronise the directories\n"
+    commands += "exit   exit the application\n"
     commands += "\n"
-    commands += "Enter command:"
   end
 end
 
@@ -39,6 +39,20 @@ module KitchenSync
         @messenger.should_receive(:puts).with(command_list)
         @ksync.command(["help"])
       end
+    end
+    
+    context "terminating the application" do
+      it "should display a goodbye message" do
+        @ksync.start
+        @messenger.should_receive(:puts).with("Thank you for using KSync")
+        @ksync.command(["exit"])
+      end
+      
+      it "should exit when the user gives the exit command" #do
+     #  @ksync.start
+     #  @ksync.command(["exit"])
+     #  @ksync.should eql(nil)
+     #end
     end
   end
 end
